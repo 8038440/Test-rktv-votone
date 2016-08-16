@@ -1,0 +1,301 @@
+@import reset
+@import sprite
+
+// fonts variables
+@import mixins
+@include font-face(Muller-Bold, fonts/Muller-Bold, bold)
+@include font-face(ProximaNova-Reg, fonts/ProximaNova-Reg, normal)
+@include font-face(ProximaNova-Xbold, fonts/ProximaNova-Xbold, bold)
+$heading-font: MULLER-BOLD, sans-serif
+$txt-font: ProximaNova-Reg, sans-serif
+$tel-font: ProximaNova-Xbold, sans-serif
+
+// width variables
+$step: 12px
+$xs: $step * 1
+$s: $step * 2
+$m: $step * 4
+$l: $step * 6
+$xl: $step * 8
+$xxl: $step * 10
+
+
+$h1-size: 46px
+$h1-line: 49px
+$h2-size: 29px
+$h2-line: 37px
+$txt1-size: 18px
+$txt1-line: 24px
+$txt2-size: 14px
+$txt2-line: 14px
+
+// colors variables
+$dark-text-color: #333333
+$light-text-color: #ffffff
+$link-color: #dd1c24
+$hover-color: #c91f33
+$bg-color: #efefef
+$heading-color: #3b3380
+$footer-color: #19173f
+$header-color: #ffffff
+$card-color: #ffffff
+$border-color: #e5e5e5
+$inactive-color: #a2a2a2
+$popup-bg-color: rgba(0,0,0,0.55)
+
+// primary styles
+article
+	padding-bottom: $xl
+h1, h1 a, h2, h2 a, .legend
+	color: $heading-color
+	font-weight: bold
+	font-family: $heading-font
+h1
+	font-size: $h1-size
+	line-height: $h1-line
+	padding-bottom: $xl		
+h2
+	font-size: $h2-size
+	line-height: $h2-line
+	padding-bottom: $m	
+h1 a:hover, h2 a:hover
+	color: $link-color
+p
+	font-size: $txt1-size
+	line-height: $txt1-line
+	padding-bottom: $m	
+	a
+		color: $dark-text-color
+		padding-bottom: 1px
+		border-bottom: 1px solid $link-color
+	a:hover
+		color: $link-color
+.mark li
+	font-size: $txt1-size
+	line-height: $txt1-line
+	padding-bottom: $xs	
+	padding-left: $txt1-size	
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABNSURBVAiZVcgxDkBAFEXR+79tUJlWR28nxMJmKYSOUiuxEJF5SplTHruqULuIQCM4k/tkdxkWQc9vdkFLrnPgyMq0exIDsAGPYH1VjB9lhRZUyJm8nAAAAABJRU5ErkJggg==') 6px 10px no-repeat
+.legend
+	font-size: $h2-size
+	line-height: $h2-line
+	padding-bottom: $s
+input.npt
+	border: none
+	border-bottom: 1px solid $border-color
+	font-size: $txt1-size
+	outline: 0
+	padding: $xs 0
+	margin-bottom: $s
+
+input.npt:focus		
+	border-color: $heading-color	
+	
+.btn
+	display: inline-block
+	font-size: $txt1-size
+	line-height: ($txt1-size * 3) - 2px
+	padding: 0 $txt1-size
+	height: $txt1-size * 3
+	border: 2px solid $link-color
+	outline: 0
+	color: $link-color
+	border-radius: 3px
+	background: none
+	cursor: pointer
+
+.btn:hover
+	border-color: $hover-color
+	background: $hover-color
+	color: $light-text-color
+	
+.right-half
+	float: right
+	padding-left: 2%
+	width: 48%
+
+.left-half
+	float: left
+	padding-right: 2%
+	width: 48%
+
+// basic parameters
+body
+	font-family: $txt-font
+	color: $dark-text-color
+	font-size: $txt1-size
+	line-height: $txt1-line
+
+// width constant	
+.wrap
+	width: 1160px
+	margin: 0 auto
+
+.main-wrap
+	width: 760px
+	margin: 0 auto
+	
+nav, main, footer
+	width: 100%
+	min-width: 1160px
+
+// nav styles
+nav
+	height: 96px
+	background-color: $header-color
+	.nav-menu
+		width: 60%
+		min-width: 582px //!!!
+		float: left		
+	ul
+		width: 580px
+		margin: 0 auto
+	ul li, .tel
+		line-height: 96px
+		float: left
+		padding-right: $s
+	a
+		display: block
+		color: $heading-color
+	a:hover, .selected
+		color: $link-color
+	.tel
+		width: 15%
+		font-family: $tel-font
+		min-width: 162px //!!!
+		font-weight: bold
+		float: right
+		text-align: right		
+		padding-right: 0		
+	.es-logo
+		width: 25%
+		min-width: 272px //!!!
+		height: 96px		
+		float: left		
+	.s-es-logo		
+		margin: (96px - 40px) / 2 0
+	.search		
+		height: 96px
+		padding-right: 0
+	.s-search		
+		margin: (96px - 20px) / 2 0
+	
+//	main styles
+
+main
+	background-color: $bg-color
+	padding: $xxl 0	
+	.card
+		background-color: $card-color
+		padding: $m
+		input.npt
+			width: 100%
+
+	.form
+		display: block
+		position: relative
+
+	.form label
+		position: absolute
+		top: 0
+		font-weight: 100		
+		font-size: $txt1-size
+		color: $inactive-color
+		cursor: text
+		line-height: $txt1-line * 2
+
+	.form input, .form label
+		padding-left: 1px
+		display: block
+		transition: all .2s
+
+	.focus-input 
+		top: - $txt2-size * 1.6 !important
+		font-size: $txt2-size !important
+
+//	footer styles
+footer
+	background-color: $footer-color
+	color: $light-text-color
+	float: left
+	padding-top: $m
+	padding-bottom: $m - $xs
+	
+	a
+		color: $light-text-color
+		display: block		
+	a:hover
+		color: $link-color
+		
+	.f-block2
+		float: left
+		width: 14%
+		min-width: 150px
+		a
+			padding-bottom: $xs
+	.f-block3
+		float: left
+		width: 24%
+		min-width: 260px
+		.tel
+			font-weight: bold
+			padding-bottom: $xs
+			font-family: $tel-font
+		.s-fb, .s-vk
+			float: left
+			margin: 0 $xs $xs 0
+		.cr
+			clear: both
+		.adr-txt
+			padding-bottom: $s
+		.s-adr
+			float: left
+		.adr-link	
+			color: $link-color
+			line-height: 21px
+			margin-left: $xs
+		.adr-link:hover		
+			border-bottom: 1px solid $link-color
+	
+		
+		
+// back to top button styles
+.s-btn-top
+	display: inline-block
+	width: 53px
+	height: 53px
+	position: fixed
+	bottom: 200px
+	right: 5%
+	overflow: hidden
+	visibility: hidden
+	opacity: 0
+	transition: opacity .3s, visibility .6s
+
+.s-btn-top.btn-visible
+	visibility: visible
+	opacity: 1
+
+// modal styles
+.layout
+	position: fixed
+	display: none
+	top: 0
+	right: 0
+	width: 100%
+	height: 100%
+	background: $popup-bg-color
+	z-index: 10
+
+.modal-card
+	position: fixed
+	display: none
+	width: 380px
+	top: 15%
+	right: 50%	
+	margin-right: -190px	
+	background: $card-color
+	padding: $m
+	padding-bottom: 0
+	z-index: 20
+
