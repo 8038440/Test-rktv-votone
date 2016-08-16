@@ -24,11 +24,6 @@ jQuery(document).ready(function($){
 	$("label").click(function() {
 	  $(this).addClass("focus-input");
 	});	
-	
-// ajax form submission
 
-		
-	
-	
 });
 
